@@ -28,8 +28,8 @@ class Understand extends Component {
             <div>
                 <h1>How well are you understanding the content?</h1>
                 <input type="text" onChange = {this.handleUnderstandChange} value = {this.state.understanding}></input>
-                <Link >
-					<button onClick = {this.handleClick}>next</button>
+                <Link to= "/support">
+					<button onClick = {this.handleClick}>NEXT</button>
 				</Link>
             </div>
         );

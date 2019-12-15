@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 import StartPage from '../StartPage/StartPage';
 import Feeling from '../Feeling/Feeling';
 import Understand from '../Understand/Understand';
+import Support from '../Support/Support';
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
         <Route exact path="/" component={StartPage} />
         <Route exact path="/feeling" component={Feeling} />
         <Route exact path="/understand" component={Understand} />
-        {/* <Route exact path="/support" component={Understand} /> */}
+        <Route exact path="/support" component={Support} />
         <br/>
       </div>
       </Router>

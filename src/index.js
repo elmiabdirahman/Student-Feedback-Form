@@ -20,11 +20,15 @@ let feedBack ={
 // Reducer 
 const feedbacksReducer = ( state = feedBack, action ) =>{
     if (action.type === 'FEELING') {
-        state.feelings = action.payload;
+        state.feeling = action.payload;
         return state;
     }
     else if (action.type === 'UNDERSTAND') {
         state.understanding = action.payload;
+        return state;
+    }
+    else if (action.type === 'SUPPORT') {
+        state.supported = action.payload
         return state;
     }
     return state

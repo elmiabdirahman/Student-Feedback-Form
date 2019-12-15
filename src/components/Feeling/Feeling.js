@@ -29,7 +29,7 @@ class Feeling extends Component {
                 <h1>Hello are you feeling today?</h1>
                 <input type = "number" onChange = {this.handleFeelingChange} value={this.state.feeling}/> 
                 <Link to="/understand">
-					<button onClick = {this.handleClick}>next</button>
+					<button onClick = {this.handleClick}>NEXT</button>
 				</Link>
             </div>
         );
