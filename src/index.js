@@ -31,6 +31,10 @@ const feedbacksReducer = ( state = feedBack, action ) =>{
         state.supported = action.payload
         return state;
     }
+    else if (action.type ==='COMMENTS') {
+        state.comment = action.payload;
+        return state;
+    }
     return state
 }
 

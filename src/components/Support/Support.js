@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class Support extends Component {
 
@@ -27,9 +28,9 @@ class Support extends Component {
             <div>
                 <h1>How well are you being supported?</h1>
                 <input type ="text" onChange = {this.handleSupportChange} value = {this.state.supported}></input>
-                <div>
+                <Link to = '/comments'>
                     <button onClick= {this.handleSupportClick}>NEXT</button>
-                </div>
+                </Link>
             </div>
         );
     }
