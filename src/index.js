@@ -18,9 +18,10 @@ let feedBack ={
 }
 
 // Reducer 
-const feedbacksReducer = ( state = feedBack, actions ) =>{
-    if (actions.type === '') {
-
+const feedbacksReducer = ( state = feedBack, action ) =>{
+    if (action.type === 'FEELING') {
+        state.feelings = action.payload;
+        return state;
     }
     return state
 }
