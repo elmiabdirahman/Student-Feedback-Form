@@ -23,6 +23,10 @@ const feedbacksReducer = ( state = feedBack, action ) =>{
         state.feelings = action.payload;
         return state;
     }
+    else if (action.type === 'UNDERSTAND') {
+        state.understanding = action.payload;
+        return state;
+    }
     return state
 }
 
