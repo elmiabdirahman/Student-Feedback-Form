@@ -6,6 +6,7 @@ import './App.css';
 import {connect} from 'react-redux'
 import StartPage from '../StartPage/StartPage';
 import Feeling from '../Feeling/Feeling';
+import Understand from '../Understand/Understand';
 
 class App extends Component {
 
@@ -18,7 +19,8 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <Route exact path="/" component={StartPage} />
-        <Route exact path="/feedback/feeling" component={Feeling} />
+        <Route exact path="/feeling" component={Feeling} />
+        <Route exact path="/understand" component={Understand} />
         <br/>
       </div>
       </Router>

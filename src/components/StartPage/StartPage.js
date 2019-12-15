@@ -7,7 +7,6 @@ class StartPage extends Component {
         return (
             <div>
                 <Link to="/feeling">
-                    <h1>Hello </h1>
 					<button >Start</button>
 				</Link>
             </div>
