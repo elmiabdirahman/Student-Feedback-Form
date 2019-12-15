@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class Comments extends Component {
 
@@ -26,9 +27,9 @@ class Comments extends Component {
             <div>
                 <h1>Any Comments you want to leave?</h1>
                 <input onChange = {this.handleCommentChange} value= {this.state.value}></input>
-                <div>
+                <Link to = '/review'>
                     <button onClick = {this.handleCommentClick}>NEXT</button>
-                </div>
+                </Link>
             </div>
         );
     }
