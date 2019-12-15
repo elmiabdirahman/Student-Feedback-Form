@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class StartPage extends Component {
+
     render() {
         return (
             <div>
-                <h1>Hello Everyone</h1>
+                <Link to="/feeling">
+                    <h1>Hello </h1>
+					<button >Start</button>
+				</Link>
             </div>
         );
     }
