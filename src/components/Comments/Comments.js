@@ -3,6 +3,20 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
+//material ui
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+
 class Comments extends Component {
 
     state = {
@@ -26,9 +40,9 @@ class Comments extends Component {
         return (
             <div>
                 <h1>Any Comments you want to leave?</h1>
-                <input onChange = {this.handleCommentChange} value= {this.state.value}></input>
+                <TextField onChange = {this.handleCommentChange} value= {this.state.value}></TextField>
                 <Link to = '/review'>
-                    <button onClick = {this.handleCommentClick}>NEXT</button>
+                    <Button variant="contained" onClick = {this.handleCommentClick}>NEXT</Button>
                 </Link>
             </div>
         );

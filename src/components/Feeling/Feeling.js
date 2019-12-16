@@ -3,6 +3,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+//material ui
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+
 class Feeling extends Component {
 
     state = {
@@ -26,10 +40,18 @@ class Feeling extends Component {
     render() {
         return (
             <div>
-                <h1>Hello are you feeling today?</h1>
-                <input type = "number" onChange = {this.handleFeelingChange} value={this.state.feeling}/> 
+                <h1>How are you feeling today?</h1>
+                <TextField
+                    id="filled-number"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }} 
+                    onChange = {this.handleFeelingChange} value={this.state.feeling}/> 
                 <Link to="/understand">
-					<button onClick = {this.handleClick}>NEXT</button>
+                    <Button
+                        variant="contained"
+                        onClick = {this.handleClick}>NEXT</Button>
 				</Link>
             </div>
         );

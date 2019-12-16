@@ -3,6 +3,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+// material ui
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+
 class Understand extends Component {
 
     state = {
@@ -27,9 +41,17 @@ class Understand extends Component {
         return (
             <div>
                 <h1>How well are you understanding the content?</h1>
-                <input type="text" onChange = {this.handleUnderstandChange} value = {this.state.understanding}></input>
+                <TextField
+                    id="filled-number"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}  
+                    onChange = {this.handleUnderstandChange} value = {this.state.understanding}></TextField>
                 <Link to= "/support">
-					<button onClick = {this.handleClick}>NEXT</button>
+                    <Button 
+                        variant="contained"
+                        onClick = {this.handleClick}>NEXT</Button>
 				</Link>
             </div>
         );

@@ -13,15 +13,11 @@ class Review extends Component {
       }
   
       onSubmit = () => {
-  
-          axios.post('/feedback', this.props.reduxState.feedBackReducer)
-  
+          axios.post('/data/feedback', this.props.payload)
           .then( (response) => {
              console.log(response.data);
-             
           }).catch((error)=>{
               console.log('Error in post', error);
-              
           })
   
       }
@@ -36,16 +32,19 @@ class Review extends Component {
 
     SubmitButton = () => {
         if (!this.completedFeedback()) {
-            return <button variant="contained" disabled>Incomplete</button>;
+            this.props.history.push('/thankyou');
+            return <button >Incomplete</button>;
+            
         }
-        
+        this.props.dispatch( { type: 'RESET', payload: this.state.submitted } )
+        return <button onClick={this.onSubmit}>Submit</button>;
     }
     // this.props.reduxState.artistReducer.
 
     render() {
         return (
             <div>
-                <p >Review</p>
+                <p >Review Your Feedback</p>
                 <p >Feelings: {this.props.reduxState.feedbacksReducer.feeling}</p>
                 <p >Understanding: {this.props.reduxState.feedbacksReducer.understanding}</p>
                 <p >Support: {this.props.reduxState.feedbacksReducer.supported}</p>

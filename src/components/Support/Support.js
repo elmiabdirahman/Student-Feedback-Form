@@ -3,6 +3,20 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
+// material ui
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+
 class Support extends Component {
 
     state = {
@@ -27,9 +41,15 @@ class Support extends Component {
         return (
             <div>
                 <h1>How well are you being supported?</h1>
-                <input type ="text" onChange = {this.handleSupportChange} value = {this.state.supported}></input>
+                <TextField
+                    id="filled-number"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }} 
+                     onChange = {this.handleSupportChange} value = {this.state.supported}></TextField>
                 <Link to = '/comments'>
-                    <button onClick= {this.handleSupportClick}>NEXT</button>
+                    <Button onClick= {this.handleSupportClick}>NEXT</Button>
                 </Link>
             </div>
         );

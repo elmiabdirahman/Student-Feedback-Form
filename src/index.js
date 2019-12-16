@@ -35,6 +35,9 @@ const feedbacksReducer = ( state = feedBack, action ) =>{
         state.comment = action.payload;
         return state;
     }
+    else if (action.type ==='RESET') {
+        return state;
+    }
     return state
 }
 
